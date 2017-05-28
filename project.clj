@@ -5,5 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [liberator "0.13"]
-                 [compojure "1.3.4"]
-                 [ring/ring-core "1.2.1"]])
+                 [ring/ring-core "1.3.2"]
+                 [compojure "1.3.4"]]
+  :plugins [[lein-ring "0.12.0"]]
+  :ring {:handler calculator-api.core/handler})

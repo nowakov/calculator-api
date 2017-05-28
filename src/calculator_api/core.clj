@@ -1,6 +1,11 @@
-(ns calculator-api.core)
+(ns calculator-api.core
+  (:require [liberator.core :refer [resource defresource]]
+            [ring.middleware.params :refer [wrap-params]]
+            [compojure.core :refer [defroutes ANY]]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defroutes app
+  (ANY "/" [] (resource)))
+
+(def handler
+  (-> app
+      wrap-params))
